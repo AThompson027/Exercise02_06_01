@@ -9,10 +9,27 @@
 
 <body>
    <?php
+    // if the submit button in the form is pushed then it will
     if (isset($_POST['submit'])) {
+        $subject = stripslashes($_POST['subject']);
+        $name = stripslashes($_POST['name']);
+        $message = stripslashes($_POST['message']);
+        // this finds strings that are put into the input and replaces it with other strings
+        $subject = str_replace("~" , "-", $subject);
+        $name = str_replace("~" , "-", $name);
+        $message = str_replace("~" , "-", $message);
+        $messageRecord = "$subject~$name~$message\n";
+        $fileHandle = fopen("messages.txt", "ab");
         
-    } else {
-
+        // if the fileHandle is not opening the file then it will give out an error message
+        if(!$fileHandle) {
+            echo "There was an error saving your message!\n";
+        } else {
+            fwrite($fileHandle, $messageRecord);
+            fclose($fileHandle);
+            echo "Your message has been saved.\n";
+        }
+        
     }
     ?>
     <h1>Post New Message</h1>
