@@ -32,6 +32,14 @@
                     $messageArray = array_unique($messageArray);
                     $messageArray = array_values($messageArray);
                     break;
+                    case 'Sort Ascending':
+                    //this sorts the messages in alphabetical order
+                    sort($messageArray);
+                    break;
+                    case 'Sort Descending':
+                    //this sorts the messages in backwards from alphabetical order
+                    rsort($messageArray);
+                    break;
             }
             if (count($messageArray > 0)) {
                 $newMessages = implode($messageArray);
@@ -94,10 +102,12 @@
     ?>
     <p>
     <a href="PostMessage.php">Post New Message</a><br>
+    <a href="MessageBoard.php?action=Sort%20Ascending">Sort Subjects A-Z</a><br>
+    <a href="MessageBoard.php?action=Sort%20Descending">Sort Subjects Z-A</a><br>
 <!--part of the URL that passes data in named value pairs (seperated by "&")-->
     <a href="MessageBoard.php?action=Delete%20First">Delete First Message</a><br>
     <a href="MessageBoard.php?action=Delete%20Last">Delete Last Message</a><br>
-    <a href="MessageBoard.php?action=Remove%20Duplicates">Remove Duplicates</a><br>
+<!--    <a href="MessageBoard.php?action=Remove%20Duplicates">Remove Duplicates</a><br>-->
     </p>
 </body>
 </html>
