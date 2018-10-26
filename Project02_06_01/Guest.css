@@ -1,0 +1,33 @@
+html {
+    background-color: firebrick;
+}
+
+form {
+    background-color: indianred;
+    height: 200px;
+    text-align: center;
+    width: 500px;
+    margin-left: 33%;
+    padding-top: 30px;
+}
+
+h1 {
+    background-color: indianred;
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    color: white;
+    text-shadow: 4px 3px firebrick;
+    width: 500px;
+    margin-left: 33%;
+}
+
+a#view {
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    background-color: white;
+    font-family: 'Charmonman', cursive;
+    font-weight: bold;
+    box-shadow: 4px 3px darkred;
+    padding: 2px;
+}
